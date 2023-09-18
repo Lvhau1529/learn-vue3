@@ -67,7 +67,7 @@
                           Edit Task
                         </p>
                       </div>
-                    </li>                    
+                    </li>
                     <li
                       class="hover:bg-[#d9ecff] cursor-pointer"
                       @click="deleteDocument(item)"
@@ -108,17 +108,8 @@ import { db } from '@/firebase'
 
 const emit = defineEmits(['removeTaskSucceeded'])
 
-const props = defineProps({
-  todos: {
-    type: Array,
-    required: true,
-    default: () => []
-  },
-  loading: {
-    type: Boolean,
-    required: true
-  },
-})
+// eslint-disable-next-line
+const props = defineProps(['todos', 'loading'])
 
 // method
 const updateDocument = async (item: any) => {
