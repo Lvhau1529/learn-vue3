@@ -10,7 +10,6 @@ import { VueFire, VueFireAuth } from "vuefire";
 import { firebaseApp } from "./firebase";
 // eslint-disable-next-line
 const { Roulette } = require('vue3-roulette');
-import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 const pinia = createPinia();
 
