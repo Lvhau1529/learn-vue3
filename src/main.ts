@@ -8,8 +8,8 @@ import "element-plus/dist/index.css";
 import "./style.css";
 import { VueFire, VueFireAuth } from "vuefire";
 import { firebaseApp } from "./firebase";
-import { Roulette } from "vue3-roulette";
-import { QuillEditor } from '@vueup/vue-quill'
+// eslint-disable-next-line
+const { Roulette } = require('vue3-roulette');
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 const pinia = createPinia();
@@ -21,7 +21,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 app.component("Roulette", Roulette);
-app.component('QuillEditor', QuillEditor)
 
 app.use(router);
 app.use(ElementPlus);
