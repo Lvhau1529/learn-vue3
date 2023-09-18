@@ -1,4 +1,17 @@
 <template>
+  <div>
+    Hello
+  </div>
+</template>
+
+<script setup lang="ts">
+
+</script>
+
+<style scoped>
+
+</style>
+<!-- <template>
   <div class="p-4">
     <h1 class="text-center font-bold text-lg">
       Choose food eating today!
@@ -73,4 +86,4 @@ function launchWheel() {
 .wheel-base-indicator:before {
   left: 50%;
 }
-</style>
+</style> -->
