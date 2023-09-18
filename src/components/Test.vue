@@ -1,9 +1,23 @@
 <template>
   <div>
-    <input
-      type="file"
-      @change="handleFileChange"
-    >
+    <div class="flex">
+      <input
+        type="file"
+        @change="handleFileChange"
+      >
+      <el-select
+        v-model="selected"
+        placeholder="Select"
+        clearable
+      >
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        />
+      </el-select>
+    </div>
     <div>
       <span>{{ copyData || "No data" }}</span>
     </div>
@@ -11,17 +25,28 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { read } from 'xlsx';
 import * as XLSX from 'xlsx';
 
 export default {
   setup() {
     const resultXlsx = ref();
-    const copyData = ref<any>({});
+    const copyData = ref<any>();
+    const options = [
+      { label: "name", value: 0 },
+      { label: "nameEn", value: 1 }
+    ]
+    const selected = ref(0);
+
     const handleFileChange = async (event: any) => {
       const file = event.target.files[0];
       const reader = new FileReader();
+
+      watch(selected, () => {
+        getDataByCol();
+      });
+
 
       reader.onload = (e: any) => {
         const data = new Uint8Array(e.target.result);
@@ -52,7 +77,7 @@ export default {
     const getDataByCol = () => {
       const result: any = {}
       resultXlsx.value.forEach((item: any) => {
-        result[item.code] = item.name;
+        result[item.code] = selected.value ? item.nameEn : item.name;
       });
       copyData.value = result;
     }
@@ -60,6 +85,8 @@ export default {
     return {
       resultXlsx,
       copyData,
+      options,
+      selected,
       handleFileChange,
     };
   },
