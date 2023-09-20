@@ -21,11 +21,11 @@
         Home
       </router-link>
     </el-menu-item>
-    <el-menu-item index="2">
+    <!-- <el-menu-item index="2">
       <router-link to="/wheel">
         Wheel
       </router-link>
-    </el-menu-item>
+    </el-menu-item> -->
     <div class="flex-grow" />
     <el-sub-menu index="3">
       <template #title>
