@@ -1,8 +1,9 @@
 <template>
   <div class="p-4">
-    <div class="flex justify-center">
+    <!-- <div class="flex justify-center"> -->
+    <div>
       <!-- <MicTable /> -->
-      <Test />
+      <ReadXlsx />
       <!-- <TodoList /> -->
     </div>
   </div>
@@ -11,7 +12,7 @@
 <script setup lang="ts">
 // import MicTable from '@/components/MicTable.vue';
 
-import Test from '@/components/Test.vue';
+import ReadXlsx from '@/components/ReadXlsx.vue';
 // import TodoList from "@/components/TodoList.vue";
 
 </script>
