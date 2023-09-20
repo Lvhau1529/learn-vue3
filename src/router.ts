@@ -34,9 +34,10 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from) => {
+  document.title = "haulv"
+
   const auth = await getAuth();
   onAuthStateChanged(auth, (user) => {
-    console.log(to, to.meta.requireAuth);
     if (to.meta.requireAuth && !user) {
       router.push("/login");
     }
