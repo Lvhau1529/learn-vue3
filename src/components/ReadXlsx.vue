@@ -104,7 +104,7 @@ const handleFileChange = async (event: any) => {
       const obj: any = {};
       jsonData[0].forEach((header: any, index: number) => {
         if (header === "Sample code") {
-          obj["code"] = row[index].substring(3);
+          obj["code"] = row[index]?.substring(3);
         } else if (header === "Sample name") {
           obj["name"] = row[index];
         } else if (header === "Sample name En") {
