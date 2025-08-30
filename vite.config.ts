@@ -5,27 +5,30 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import eslintPlugin from "vite-plugin-eslint";
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    port: 8080,
-  },
-  plugins: [
-    vue(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-    eslintPlugin,
-  ],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@assets": path.resolve(__dirname, "./src/assets"),
-      "@components": path.resolve(__dirname, "./src/components"),
-    },
-  },
+	server: {
+		port: 8080,
+	},
+	plugins: [
+		vue(),
+		AutoImport({
+			resolvers: [ElementPlusResolver()],
+		}),
+		Components({
+			resolvers: [ElementPlusResolver()],
+		}),
+		eslintPlugin,
+		tailwindcss(),
+	],
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
+			"@assets": path.resolve(__dirname, "./src/assets"),
+			"@components": path.resolve(__dirname, "./src/components"),
+		},
+	},
 });
+

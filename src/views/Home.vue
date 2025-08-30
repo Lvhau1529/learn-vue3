@@ -3,16 +3,18 @@
     <!-- <div class="flex justify-center"> -->
     <div>
       <!-- <MicTable /> -->
-      <ReadXlsx />
+      <!-- <ReadXlsx /> -->
       <!-- <TodoList /> -->
+      <LoanCalulator />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import MicTable from '@/components/MicTable.vue';
+import LoanCalulator from '@/components/LoanCalulator.vue';
 
-import ReadXlsx from '@/components/ReadXlsx.vue';
+// import MicTable from '@/components/MicTable.vue';
+// import ReadXlsx from '@/components/ReadXlsx.vue';
 // import TodoList from "@/components/TodoList.vue";
 
 </script>
